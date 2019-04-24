@@ -72,7 +72,7 @@ public class Service96ReproducerTest {
         Async async = context.async();
 
         vertx.createHttpClient().getNow(8080, "localhost", "/", response -> {
-            context.assertEquals(response.statusCode(), 501);
+            context.assertEquals(response.result().statusCode(), 501);
             async.complete();
         });
     }
